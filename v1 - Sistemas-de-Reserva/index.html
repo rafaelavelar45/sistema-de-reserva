@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <main>
+        <section class="container"> 
+            <div>
+                <video autoplay muted loop class="bg-video" >
+                    <source src="video/capa.mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+                <div id="form">
+                     <header>
+                        <h1>Le Cordon</h1>
+                        <p>Especialmente feito para você</p>
+                    </header>
+                    <h2>Faça sua Reserva Hoje</h2>
+                    <form >
+                        <div class="box">
+                            <label>Nome: </label><input type="text" name="name" id="nome"><br>
+                            <span id="name-error" class="error"></span>
+                        </div>
+                        <div >
+                            <label>CPF: </label><input type="number" name="number" id="cpf"><br>
+                            <span id="cpf-error" class="error"></span>
+                        </div>
+                        <div>
+                            <label>Número da Mesa: </label><input type="number" name="number" id="mesa"><br>
+                            <span id="number-mesa-error" class="error"></span>
+                        </div>
+                        <div>
+                            <label>Data: </label><input type="date" name="date" id="data"><br>
+                            <span id="date-error" class="error"></span>
+                        </div>
+                        <div>
+                            <label>Numero telefone: </label><input type="number" name="number" id="numero">
+                            <span id="number-telefone-error" class="error"></span>
+                        </div>
+                    </form>
+                    <div id="botao" onclick="clicar()"><p>Reserve</p></div>
+                </div>
+        
+        </section>
+    </main>
+    <script src="script/script.js"></script>
+    <div id="sucesso">
+    </div>
+</body>
+</html>

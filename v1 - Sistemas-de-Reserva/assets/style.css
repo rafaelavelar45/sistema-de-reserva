@@ -1,0 +1,226 @@
+
+*{
+    font-family: Gilda Display;
+}
+
+@font-face {
+    font-family: Italiana-Regular;
+     font-weight: normal;
+    src: local() url(Italiana/Italiana-Regular.ttf); /* serve para buscar uma font dentro da maquina , local() serve para buscar a font dentro da maquina do usuario */
+}
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Italiana&display=swap');
+
+@keyframes fadeInUp { /* faz com que formulario aparece suave na tela */
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* coloca efeito brilhante como transição no titulo h1 */
+
+
+
+#form{
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes glow {
+    0% {text-shadow: 0 0 5px #fff;}
+    50% {text-shadow: 0 0 15px #f0f0eb, 0 0 30px #181717;}
+    100% {text-shadow: 0 0 5px #fff;}
+}
+
+#form h1{
+    animation: glow 3s infinite ease-in-out;
+}
+body{
+    margin: 0;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+
+.bg-video{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: -1;
+   
+ 
+}
+
+
+#form{
+    color: white;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.397), rgba(30, 30, 30, 0.692));
+    border: 1px solid  black;
+    padding: 20px;
+    box-shadow: 2px rgba(0, 0, 0, 0.466);
+    width: 650px;
+    
+    
+}
+#botao{
+    background-color: #88979a8c;
+    height: 50px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.226);
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 4px;
+}
+
+header p {
+    letter-spacing: 7px;
+}
+
+form > div{
+    padding: 5px;
+}
+
+ header > h1 {
+    color: white;
+    text-align: center;
+}
+
+header > p {
+    color: white;
+    text-align: center
+}
+
+#form h1{
+    font-size: 50px;
+    font-family: Italiana-Regular;
+}
+
+#form p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+input{
+    width: 95%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+    background-color: rgba(27, 27, 27, 0.459);
+    color: white;
+    font-size: 20px;
+    
+}
+
+input:focus{
+    border-color: #ffcc00;
+    box-shadow: 0 0 5PX #ffcc00;
+}
+
+.video-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.178);
+    z-index: 2;
+    pointer-events: none;
+    
+}
+
+#form h2{
+    font-size: 17px;
+}
+
+
+.error{
+    color: #ff0000;
+    margin-right: 395px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    
+}
+
+#sucesso{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-side {
+        background-image: none; /* Remove a imagem estática */
+    }
+
+    .bg-video {
+        object-fit: cover;
+        position: fixed; /* Faz o vídeo ocupar a tela toda */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Coloca o vídeo atrás de tudo */
+    }
+
+    .video-overlay {
+        display: none; /* Se quiser tirar o overlay escuro do vídeo em telas pequenas */
+        background-color: rgba(240, 22, 22, 0.473);
+    }
+
+    #form {
+        width: 90%;
+        background: rgba(0, 0, 0, 0.705); /* Mantém o formulário legível sobre o vídeo */
+    }
+}
